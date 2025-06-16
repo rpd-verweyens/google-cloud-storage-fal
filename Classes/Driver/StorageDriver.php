@@ -74,6 +74,8 @@ class StorageDriver extends AbstractHierarchicalFilesystemDriver
 
     private NamingHelper $namingHelper;
 
+    protected array $temporaryPaths = [];
+
     /**
      * Initialize this driver and expose the capabilities for the repository to use.
      *
@@ -87,6 +89,13 @@ class StorageDriver extends AbstractHierarchicalFilesystemDriver
             | Capabilities::CAPABILITY_PUBLIC
             | Capabilities::CAPABILITY_WRITABLE,
         );
+    }
+
+    public function __destruct()
+    {
+        foreach ($this->temporaryPaths as $temporaryPath) {
+            @unlink($temporaryPath);
+        }
     }
 
     /**
@@ -558,6 +567,7 @@ class StorageDriver extends AbstractHierarchicalFilesystemDriver
             if (!file_exists($temporaryPath)) {
                 throw new RuntimeException('Writing file ' . $fileIdentifier . ' to temporary path failed.', 1320577649);
             }
+            $this->temporaryPaths[] = $temporaryPath;
         }
 
         return $temporaryPath;
