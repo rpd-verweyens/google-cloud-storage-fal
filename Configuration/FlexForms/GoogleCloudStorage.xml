@@ -3,83 +3,74 @@
     <meta>
         <langDisable>1</langDisable>
     </meta>
-    <sheets>
-        <general>
-            <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.authentication</sheetTitle>
-                </TCEforms>
-                <type>array</type>
-                <el>
-                    <authenticationType>
-                        <TCEforms>
-                            <label>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.authenticationType.label</label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0">
-                                        <numIndex index="0">LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.select.privateKeyJsonPathAndFileName</numIndex>
-                                        <numIndex index="1">keyFilePath</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.select.privateKeyJson</numIndex>
-                                        <numIndex index="1">keyFileContent</numIndex>
-                                    </numIndex>
-                                </items>
-                                <default>keyFilePath</default>
-                            </config>
-                        </TCEforms>
-                    </authenticationType>
-                    <keyFilePath>
-                        <TCEforms>
-                            <label>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.keyFilePath.label</label>
-                            <displayCond>FIELD:authenticationType:=:keyFilePath</displayCond>
-                            <config>
-                                <type>input</type>
-                                <size>50</size>
-                                <required>1</required>
-                                <placeholder>googlecloudkeyfile.json or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
-                            </config>
-                        </TCEforms>
-                    </keyFilePath>
-                    <keyFileContent>
-                        <TCEforms>
-                            <label>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.keyFileContent.label</label>
-                            <displayCond>FIELD:authenticationType:=:keyFileContent</displayCond>
-                            <config>
-                                <type>text</type>
-                                <rows>15</rows>
-                                <required>1</required>
-                                <placeholder>Json or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
-                            </config>
-                        </TCEforms>
-                    </keyFileContent>
-                    <bucketName>
-                        <TCEforms>
-                            <label>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.bucketName.label</label>
-                            <config>
-                                <type>input</type>
-                                <size>50</size>
-                                <required>1</required>
-                                <placeholder>bucket name or or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
-                            </config>
-                        </TCEforms>
-                    </bucketName>
-                    <publicBaseUri>
-                        <TCEforms>
-                            <label>LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.publicBaseUri.label</label>
-                            <config>
-                                <type>input</type>
-                                <size>50</size>
-                                <required>1</required>
-                                <placeholder>https://storage.googleapis.com/[bucketname]/ or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
-                            </config>
-                        </TCEforms>
-                    </publicBaseUri>
-                </el>
-            </ROOT>
-        </general>
-    </sheets>
+    <ROOT>
+        <type>array</type>
+        <el>
+            <authenticationType>
+                <label>
+                    LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.authenticationType.label</label>
+                <onChange>reload</onChange>
+                <config>
+                    <type>select</type>
+                    <renderType>selectSingle</renderType>
+                    <items>
+                        <numIndex index="0">
+                            <numIndex index="0">
+                                LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.select.privateKeyJsonPathAndFileName</numIndex>
+                            <numIndex index="1">keyFilePath</numIndex>
+                        </numIndex>
+                        <numIndex index="1">
+                            <numIndex index="0">
+                                LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.select.privateKeyJson</numIndex>
+                            <numIndex index="1">keyFileContent</numIndex>
+                        </numIndex>
+                    </items>
+                    <default>keyFilePath</default>
+                </config>
+            </authenticationType>
+            <keyFilePath>
+                <label>
+                    LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.keyFilePath.label</label>
+                <displayCond>FIELD:authenticationType:=:keyFilePath</displayCond>
+                <config>
+                    <type>input</type>
+                    <size>50</size>
+                    <required>1</required>
+                    <placeholder>googlecloudkeyfile.json or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
+                </config>
+            </keyFilePath>
+            <keyFileContent>
+                <label>
+                    LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.keyFileContent.label</label>
+                <displayCond>FIELD:authenticationType:=:keyFileContent</displayCond>
+                <config>
+                    <type>text</type>
+                    <rows>15</rows>
+                    <required>1</required>
+                    <placeholder>Json or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
+                </config>
+            </keyFileContent>
+            <bucketName>
+                <label>
+                    LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.bucketName.label</label>
+                <config>
+                    <type>input</type>
+                    <size>50</size>
+                    <required>1</required>
+                    <placeholder>bucket name or or %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
+                </config>
+            </bucketName>
+            <publicBaseUri>
+                <label>
+                    LLL:EXT:google_cloud_storage_fal/Resources/Private/Language/locallang.xlf:driverConfiguration.publicBaseUri.label</label>
+                <config>
+                    <type>input</type>
+                    <size>50</size>
+                    <required>1</required>
+                    <placeholder>https://storage.googleapis.com/[bucketname]/ or
+                        %env(GOOGLE_ENVIRONMENT_VAR_NAME)%</placeholder>
+                </config>
+            </publicBaseUri>
+        </el>
+    </ROOT>
 </T3DataStructure>
